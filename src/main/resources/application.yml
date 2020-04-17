@@ -1,0 +1,20 @@
+server:
+  port: 8081
+
+#配置服务名称
+spring:
+  application:
+    name: springcloud-consumer
+
+#eureka 的连接地址
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin123@eureka8070:8070/eureka/,http://admin:admin123@eureka8071:8071/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        #springboot的监控端点访问权限，* 表示所有的都可以访问，或者指定访问hystrix.stream
+        include: hystrix.stream
